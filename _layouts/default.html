@@ -1,0 +1,76 @@
+---
+layout: compress
+---
+
+<!DOCTYPE html>
+<html class="no-js" lang="en" dir="ltr">
+
+<!-- Head -->
+{% include head.html %}
+<!-- End Head -->
+
+<body class="{{page.layout | slugify}}">
+  
+<!-- Off Canvas Navigation -->
+<div class="off-canvas position-right" id="offCanvas" data-off-canvas data-transition="overlap" data-close-on-click="false" data-content-scroll="false">
+{% include offcanvas.html %}
+</div>
+<!-- End Off Canvas Navigation --> 
+
+<div class="off-canvas-content" data-off-canvas-content id="swup-body">
+<!-- Navigation -->
+{% include navigation.html %}
+<!-- End Navigation -->
+
+<div class="swup-transition-fade">
+<!-- Content -->
+{{content}}
+<!-- End Content -->
+</div>
+
+{% unless page.layout == "story" or "contact" %}
+<!-- Testimonials -->
+{% include testimonials.html %}
+<!-- End Testimonials -->
+{% endunless %}
+
+<!-- Subscribe -->
+{% include subscribe.html %}
+<!-- End Subscribe -->
+<!-- Footer -->
+{% include footer.html %}
+<!-- End Footer -->
+
+</div>
+
+<div class="reveal" id="covidModal" data-reveal>
+
+
+  <div class="grid-x grid-padding-x grid-padding-y align-center margin-top-2 margin-bottom-2">
+    <div class="small-12 medium-10 large-10 cell text-center">
+
+      <h3 class="primary-font">Covid-19 Update</h3>
+      {{site.covid-text | markdownify}}
+
+      <div class="grid-x grid-padding-x grid-padding-y">
+        <div class="small-12 medium-6 cell text-center">
+         <a href="https://only-jerkin.orderswift.com" class="button expanded">Click + Collect</a>
+         Erdington, Kennington, Bethnal Green
+        </div>
+        <div class="small-12 medium-6 cell text-center">
+         <a href="https://deliveroo.co.uk" class="button expanded">Delivery</a>
+         Birmingham Th-Su, Bethnal Green M-Su & Kennington M-Su
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <button class="close-button" data-close aria-label="Close modal" type="button">
+    <span aria-hidden="true">&times;</span>
+  </button>
+</div>
+
+</body>
+
+</html>
